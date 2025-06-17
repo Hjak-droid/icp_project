@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    },
+    "vastu_icp_backend": {
+      "candid": "src/vastu_icp_backend/vastu_icp_backend.did",
+      "package": "vastu_icp_backend",
+      "type": "rust"
+    },
+    "vastu_icp_frontend": {
+      "dependencies": [
+        "vastu_icp_backend"
+      ],
+      "source": [
+        "src/vastu_icp_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "vastu_icp_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
